@@ -15,6 +15,7 @@ nav img {
 
 .pictureFade img {
     position: absolute !important;
+    width: 100%;
 }
 
 .pictureFade {
