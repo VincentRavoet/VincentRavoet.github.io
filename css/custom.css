@@ -17,6 +17,10 @@ nav img {
   filter: drop-shadow(2px 2px 2px #222);
 }
 
+#carouselExampleIndicators {
+    padding-top: 84px;
+}
+
 .carousel-fade .carousel-item {
     opacity: 0;
     transition-duration: .6s;
