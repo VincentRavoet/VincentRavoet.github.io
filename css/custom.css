@@ -8,19 +8,37 @@ nav li {
     margin-left: 40px;
 }
 
+#navbarSupportedContent .active a {
+    border-bottom: 2px solid #DA161E;
+}
+
 nav img {
     -webkit-filter: drop-shadow(2px 2px 2px #222);
   filter: drop-shadow(2px 2px 2px #222);
 }
 
-.pictureFade img {
-    position: absolute !important;
-    width: 100%;
+.carousel-fade .carousel-item {
+    opacity: 0;
+    transition-duration: .6s;
+    transition-property: opacity;
 }
-
-.pictureFade {
-    position: relative;
-    width: 100%;
-    margin: auto;
-    height: 100vh;
+   
+.carousel-fade  .carousel-item.active,
+.carousel-fade  .carousel-item-next.carousel-item-left,
+.carousel-fade  .carousel-item-prev.carousel-item-right {
+     opacity: 1;
 }
+   
+.carousel-fade .active.carousel-item-left,
+.carousel-fade  .active.carousel-item-right {
+    opacity: 0;
+}
+   
+.carousel-fade  .carousel-item-next,
+.carousel-fade .carousel-item-prev,
+.carousel-fade .carousel-item.active,
+.carousel-fade .active.carousel-item-left,
+.carousel-fade  .active.carousel-item-prev {
+    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
+}   
