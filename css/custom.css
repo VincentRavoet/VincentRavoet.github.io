@@ -27,17 +27,30 @@ nav img {
 }
 
 .parallax {
-    /* Full height */
-    height: 100%; 
-  
-    /* Create the parallax scrolling effect */
+    height: 100%;   
+    padding-top: 84px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+#pa1 > div {
+    position: absolute;
+    background: rgba(255,255,255,0.8);
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    padding: 50px;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+#pa1 > div > img {
+    width: 500px;
+}
   
-  /* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
 @media only screen and (max-device-width: 1366px) {
     .parallax {
         background-attachment: scroll;
@@ -91,6 +104,7 @@ nav img {
 }
 
 #logo_container img {
+
     width: 300px;
     display:block;
     margin:auto;
