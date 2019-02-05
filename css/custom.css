@@ -1,3 +1,8 @@
+body, html {
+  height: 100%;
+  color: #012961;
+}
+
 nav {
     position: fixed !important;
     z-index: 5000;
@@ -8,13 +13,35 @@ nav li {
     margin-left: 40px;
 }
 
-#navbarSupportedContent .active a {
-    border-bottom: 2px solid #DA161E;
-}
-
 nav img {
     -webkit-filter: drop-shadow(2px 2px 2px #222);
   filter: drop-shadow(2px 2px 2px #222);
+}
+
+#pa1 {
+    background-image: url('../img/office/1.png');
+}
+
+#pa2 {
+    background-image: url('../img/office/2.png');
+}
+
+.parallax {
+    /* Full height */
+    height: 100%; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+  
+  /* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+    .parallax {
+        background-attachment: scroll;
+    }
 }
 
 #carouselExampleIndicators {
@@ -46,3 +73,25 @@ nav img {
     transform: translateX(0);
     transform: translate3d(0, 0, 0);
 }   
+
+@media (min-width: 992px) {
+    #navbarSupportedContent .active a {
+        border-bottom: 2px solid #DA161E;
+    }
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-block { 
+    padding: 40px;
+}
+
+#logo_container img {
+    width: 300px;
+    display:block;
+    margin:auto;
+}
