@@ -1,6 +1,9 @@
+* {
+    font-family: 'Noto Sans', sans-serif;
+}
+
 body, html {
   height: 100%;
-  color: #012961;
 }
 
 nav {
@@ -14,8 +17,9 @@ nav li {
 }
 
 nav img {
-    -webkit-filter: drop-shadow(2px 2px 2px #222);
-  filter: drop-shadow(2px 2px 2px #222);
+    -webkit-filter: drop-shadow(1px 1px 1px #222);
+    filter: drop-shadow(1px 1px 1px #222);
+    height: 60px;
 }
 
 #pa1 {
@@ -41,14 +45,18 @@ nav img {
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     border-radius: 15px;
-    padding: 50px;
+    padding: 30px;
     top: 50%; 
     left: 50%; 
     transform: translate(-50%, -50%);
 }
 
 #pa1 > div > img {
-    width: 500px;
+    width: 100%;
+}
+
+#movie_section {
+    padding: 50px;
 }
   
 @media only screen and (max-device-width: 1366px) {
@@ -103,9 +111,24 @@ nav img {
     padding: 40px;
 }
 
-#logo_container img {
+#logo_container {
+    border-top: 1px solid #DDDDDD;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
+#logo_container > div {
+    margin-top: -60px;
+}
+
+#logo_container img {
     width: 300px;
-    display:block;
-    margin:auto;
+    padding: 30px;
+    display: block;
+    margin: auto;
+    background: white;
+}
+
+#movie_section_description_title {
+    font-size: 50px;
 }
