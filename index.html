@@ -19,8 +19,9 @@
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
-        type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
 
     <!-- Custom styles for this template -->
     <link href="css/landing-page.css" rel="stylesheet">
@@ -29,6 +30,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="https://unpkg.com/typewriter-effect/dist/core.js"></script>
     <script>
         $(document).ready(function () {
             // $('.carousel').carousel({
@@ -53,6 +55,22 @@
                     $('nav img').attr('src', './img/logo-groot.png');
                 }
             }
+
+            var app = document.getElementById('typewriter');
+            console.log(app);
+            var typewriter = new Typewriter(app, {
+                loop: true
+            });
+
+            typewriter.typeString('efficiëntie')
+                .pauseFor(2500)
+                .deleteAll()
+                .typeString('rust')
+                .pauseFor(2500)
+                .deleteAll()
+                .typeString('gezelligheid')
+                .pauseFor(2500)
+                .start();
         });
     </script>
 </head>
@@ -103,62 +121,43 @@
         </div>
     </div> -->
     <div id="pa1" class="parallax">
-        <div class="col-sm-10 col-md-6 col-lg-5">
-            <img src="./img/logo-groot.png">
+        <div>
+            <div>
+                <h2 style="line-height: 1.6;">
+                    Een goede kantoorinrichting levert een bijdrage<br>
+                    aan de gezondheid en het welzijn van de werknemer<br>
+                    en bevordert de <strong><span id="typewriter" style="color: red;"></span></strong>
+                </h2>
+            </div>
         </div>
     </div>
 
-    <!-- Icons Grid -->
     <section id="over">
         <h2 style="text-align: center; padding: 50px; font-weight: 1">
             <i>Wij nemen alle zorgen van u over en brengen het tot een
                 <span style="color: red; border-bottom: 2px solid red; padding-bottom: 5px;">prachtig</span> einde.</i>
         </h2>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div style="padding:56.25% 0 0 0;position:relative;">
-                        <iframe src="https://player.vimeo.com/video/311917794?color=ffffff&title=0&byline=0&portrait=0"
-                            style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0"
-                            webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                    </div>
+        <div class="flex-container" style="padding-bottom: 50px;">
+            <div id="movie_section_description" class="col-lg-6">
+                <h4 style="line-height: 1.6; text-align: justify;
+                text-justify: inter-word; overflow-wrap: break-word;">JORA
+                    ontwerpt en vervaardigt verschillende
+                    kantoormeubelprogramma's voor
+                    administratieve
+                    werkplekken, directiekantoren, vergaderzalen, receptiebalies, refters, enz..</h4>
+                <h4 style="line-height: 1.6; text-align: justify;
+                    text-justify: inter-word; overflow-wrap: break-word;">JORA
+                    ontwerpt en vervaardigt verschillende
+                    kantoormeubelprogramma's voor
+                    administratieve
+                    werkplekken, directiekantoren, vergaderzalen, receptiebalies, refters, enz..</h4>
 
-                    <!-- <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                        <div class="features-icons-icon d-flex">
-                            <i class="icon-screen-desktop m-auto text-danger"></i>
-                        </div>
-                        <h3>Test</h3>
-                        <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                        <div class="features-icons-icon d-flex">
-                            <i class="icon-layers m-auto text-danger"></i>
-                        </div>
-                        <h3>Test</h3>
-                        <p class="lead mb-0">Featuring the latest build of the new Bootstrap 4 framework!</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                        <div class="features-icons-icon d-flex">
-                            <i class="icon-check m-auto text-danger"></i>
-                        </div>
-                        <h3>Test</h3>
-                        <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
-                    </div>
-                </div> -->
-                </div>
-                <div id="movie_section_description" class="col-lg-12">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-
+            </div>
+            <div class="col-lg-6">
+                <div style="padding:56.25% 0 0 0;position:relative;">
+                    <iframe src="https://player.vimeo.com/video/311917794?color=ffffff&title=0&byline=0&portrait=0"
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0"
+                        webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -254,29 +253,34 @@
             </div>
         </div>
     </section>-->
-
-    <footer class="bgline">
+    <!-- <section>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2501.1666461531654!2d4.459640815757932!3d51.179151379582514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3f9ffe5b73259%3A0x1e3a02ccc34d4aed!2sHeirbaan+49%2C+2640+Mortsel!5e0!3m2!1sen!2sbe!4v1549661825025"
+            width="100%" height="200px" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </section> -->
+    <footer id="contact" class="bgline">
         <div class="container flex-container">
             <div class="footer-block">
                 <address>
                     <strong>Jora Kantoormeubelen</strong><br>
-                    <span>Heirbaan 62</span><br>
+                    <span>Heirbaan 49</span><br>
                     <span>2640 Mortsel</span><br>
                     <span>Antwerpen, België</span><br>
                 </address>
             </div>
             <div class="footer-block">
                 <div class="calltoaction">
-                    <strong>Vragen of interesse in een offerte?</strong><br>
-                    Neem contact op met ons<br>
-                    <strong>+32 3 448 35 00 </strong> of <strong><a href="mailto:jos@jora.be">jos@jora.be</a></strong>
+                    <strong>Vragen of interesse in een offerte?</strong><br><br>
+
+                    <i class="fas fa-phone contacticon"></i>
+                    <strong>+32 3 448 35 00 </strong>
+                    <br>
+                    <i class="fas fa-envelope contacticon"></i>
+                    <strong><a href="mailto:jos@jora.be">jos@jora.be</a></strong>
                 </div>
                 <div class="social-icons">
-                    <a class="social-icon facebook" href="http://facebook.com/inventis">Facebook</a>
-                    <a class="social-icon twitter" href="http://twitter.com/inventis">Twitter</a>
-                    <a class="social-icon flickr" href="http://flickr.com/inventis">Flickr</a>
-                    <a class="social-icon youtube" href="http://www.youtube.com/user/inventiswebdesign">Youtube</a>
-                    <a class="social-icon googleplus" href="https://plus.google.com/115069433095199985859" rel="publisher">Google+</a>
+                    <a class="social-icon facebook" href="https://facebook.com/JoraKantoormeubelen/" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -284,6 +288,9 @@
             <div>
                 <img src="./img/logo-groot.png">
             </div>
+        </div>
+        <div style="color: grey; text-align:center; padding-bottom: 20px;">
+            <span>© 2019</span>
         </div>
     </footer>
 </body>
