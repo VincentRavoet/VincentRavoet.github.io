@@ -6,11 +6,6 @@ body, html {
   height: 100%;
 }
 
-#style-2::-webkit-scrollbar {
-	width: 12px;
-	background-color: #F5F5F5;
-}
-
 nav {
     position: fixed !important;
     z-index: 5000;

@@ -33,6 +33,7 @@
     <script src="https://unpkg.com/typewriter-effect/dist/core.js"></script>
     <script>
         $(document).ready(function () {
+
             $('a[href*="#"]')
                 // Remove links that don't actually link to anything
                 .not('[href="#"]')
@@ -54,20 +55,17 @@
                             $('html, body').animate({
                                 scrollTop: target.offset().top - 86
                             }, 800, function () {
-                                // Callback after animation
-                                // Must change focus!
-                                var $target = $(target);
-                                $target.focus();
-                                if ($target.is(":focus")) { // Checking if the target was focused
-                                    return false;
-                                } else {
-                                    $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
-                                    $target.focus(); // Set focus again
-                                };
                             });
                         }
                     }
                 });
+
+            $(window).on('scroll', function () {
+                scrollPosition = $(this).scrollTop();
+                if (scrollPosition >= $(window).height()) {
+
+                }
+            });
 
             // $('.carousel').carousel({
             //     interval: 2000,
@@ -101,7 +99,13 @@
             typewriter.typeString('efficiëntie.')
                 .pauseFor(2500)
                 .deleteAll()
+                .typeString('communicatie.')
+                .pauseFor(2500)
+                .deleteAll()
                 .typeString('rust.')
+                .pauseFor(2500)
+                .deleteAll()
+                .typeString('concentratie.')
                 .pauseFor(2500)
                 .deleteAll()
                 .typeString('gezelligheid.')
@@ -123,19 +127,19 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto text-center">
-                    <li class="nav-item active">
+                    <li id="nav_home" class="nav-item active">
                         <a class="nav-link" href="#pa1">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li id="nav_over" class="nav-item">
                         <a class="nav-link" href="#over">Over</a>
                     </li>
-                    <li class="nav-item">
+                    <li id="nav_projects" class="nav-item">
                         <a class="nav-link" href="#">Projecten</a>
                     </li>
-                    <li class="nav-item">
+                    <li id="nav_pictures" class="nav-item">
                         <a class="nav-link" href="#">Foto's</a>
                     </li>
-                    <li class="nav-item">
+                    <li id="nav_contact" class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
                     </li>
                 </ul>
@@ -169,7 +173,7 @@
     </div>
 
     <section id="over">
-        <h2 style="font-size: 2.5vw; text-align: center; padding: 50px; font-weight: 1">
+        <h2 style="font-size: 3vw; text-align: center; padding: 50px; font-weight: 1">
             <i>Wij nemen alle zorgen van u over en brengen het tot een
                 <span style="color: red; border-bottom: 2px solid red; padding-bottom: 5px;">prachtig</span> einde.</i>
         </h2>
@@ -180,7 +184,8 @@
                     ontwerpt en vervaardigt verschillende
                     kantoormeubelprogramma's voor
                     administratieve
-                    werkplekken, directiekantoren, vergaderzalen, receptiebalies, refters, enz..</h4>
+                    werkplekken, directiekantoren, vergaderzalen, receptiebalies, refters, enzovoort.</h4><br>
+                <h4>U kunt hieronder ons promofilmpje bekijken.</h4>
 
             </div>
             <div>
