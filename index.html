@@ -45,6 +45,9 @@
                 .not('[href="#"]')
                 .not('[href="#0"]')
                 .click(function (event) {
+                    if ($(window).width() < 992) {
+                        $('.navbar-toggler').click();
+                    }
                     // On-page links
                     if (
                         location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
@@ -114,8 +117,11 @@
                 .typeString('concentratie.')
                 .pauseFor(2500)
                 .deleteAll()
-                .typeString('gezelligheid.')
+                .typeString('ergonomie.')
                 .pauseFor(2500)
+                .deleteAll()
+                .typeString('gezelligheid.')
+                .pauseFor(1000)
                 .start();
         });
     </script>
@@ -207,37 +213,38 @@
     <div id="pa2" class="parallax"></div>
 
     <section id="contact">
-        <h2 class="h1-responsive font-weight-bold text-center my-4">Contacteer ons</h2>
+        <h2 class="h1-responsive font-weight-bold text-center" style="padding-top: 24px;">Contacteer ons</h2>
         <p class="text-center w-responsive mx-auto mb-5">Heeft u vragen of interesse in een offerte?<br> Aarzel niet om
             ons te contacteren. Wij helpen u zo snel mogelijk verder.</p>
 
         <div class="container">
             <div class="flex-container">
-                <div class="col-md-6">
+                <div class="col-md-6" style="padding-bottom: 25px;">
                     <form id="contact-form" name="contact-form" action="mail.php" method="POST">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="md-form mb-0">
-                                    <input type="text" id="name" name="name" class="form-control" placeholder="Naam">
+                                    <input type="text" id="contact_name" name="name" class="form-control" placeholder="Naam">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="md-form mb-0">
-                                    <input type="text" id="email" name="email" class="form-control" placeholder="E-mail">
+                                    <input type="text" id="contact_email" name="email" class="form-control" placeholder="E-mail">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="md-form mb-0">
-                                    <input type="text" id="subject" name="subject" class="form-control" placeholder="Onderwerp">
+                                    <input type="text" id="contact_subject" name="subject" class="form-control"
+                                        placeholder="Onderwerp">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="md-form">
-                                    <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"
+                                    <textarea type="text" id="contact_message" name="message" rows="2" class="form-control md-textarea"
                                         placeholder="Uw bericht"></textarea>
                                 </div>
 
@@ -245,8 +252,8 @@
                         </div>
                     </form>
 
-                    <div class="text-center text-md-left">
-                        <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Verzenden</a>
+                    <div class="text-center text-md-right">
+                        <a class="btn btn-danger" onclick="document.getElementById('contact-form').submit();">Verzenden</a>
                     </div>
                     <div class="status"></div>
                 </div>
@@ -353,18 +360,18 @@
             width="100%" height="200px" frameborder="0" style="border:0" allowfullscreen></iframe>
     </section> -->
 
-    <footer id="contact" class="bgline">
+    <footer class="bgline">
         <div class="container flex-container text-center" style="margin-top: 100px; margin-bottom: 100px;">
             <div>
-                <i class="fas fa-map-marker-alt fa-2x" style="margin-top: 1.5rem!important;"></i>
+                <i class="fas fa-map-marker-alt fa-2x text-danger"></i>
                 <p>Mortsel, Heirbaan 49</p>
             </div>
             <div>
-                <i class="fas fa-phone mt-4 fa-2x"></i>
+                <i class="fas fa-phone fa-2x text-danger"></i>
                 <p>+ 32 3 448 35 00</p>
             </div>
             <div>
-                <i class="fas fa-envelope mt-4 fa-2x"></i>
+                <i class="fas fa-envelope fa-2x text-danger"></i>
                 <p>info@jora.be</p>
             </div>
         </div>
