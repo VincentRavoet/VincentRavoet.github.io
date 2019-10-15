@@ -36,7 +36,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script src="https://player.vimeo.com/api/player.js"></script>
     <script src="https://unpkg.com/typewriter-effect/dist/core.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.1/js/mdb.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.1/js/mdb.min.js"></script>
     <script>
         $(document).ready(function () {
 
@@ -124,6 +125,37 @@
                 .pauseFor(1000)
                 .start();
         });
+
+        var counter = 0;
+
+        function setBckImage() {
+            if (counter < 5) {
+                counter++;
+            } else {
+                counter = 1;
+            }
+
+            switch (counter) {
+                case 1:
+                    jQuery('#pa1').css({ "background-image": "url(img/carousel/2.jpg)" });
+                    break;
+                case 2:
+                    jQuery('#pa1').css({ "background-image": "url(img/carousel/3.jpg)" });
+                    break;
+                case 3:
+                    jQuery('#pa1').css({ "background-image": "url(img/carousel/4.jpg)" });
+                    break;
+                case 4:
+                    jQuery('#pa1').css({ "background-image": "url(img/carousel/5.jpg)" });
+                    break;
+                case 5:
+                    jQuery('#pa1').css({ "background-image": "url(img/carousel/1.jpg)" });
+                    break;
+
+            }
+        }
+
+        var run = setInterval(setBckImage, 4000);
     </script>
 </head>
 
@@ -172,16 +204,9 @@
             </div>
         </div>
     </div> -->
+
     <div id="pa1" class="parallax">
-        <div>
-            <div>
-                <h1 class="h1-responsive" style="line-height: 1.6;">
-                    Een goede kantoorinrichting levert een bijdrage
-                    aan de gezondheid en het welzijn van de werknemer
-                    en bevordert de <strong><span id="typewriter" style="color: red;"></span></strong>
-                </h1>
-            </div>
-        </div>
+        <div></div>
     </div>
 
     <section id="over">
@@ -210,7 +235,58 @@
             </div>
     </section>
 
-    <div id="pa2" class="parallax"></div>
+    <div id="pa2" class="parallax">
+        <div class="parallax-inner row m-0">
+
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="card-img-top" src="img/cards/tafel.jpg" alt="Card image cap">
+                        <div class="card-body-wrapper">
+                            <h5 class="card-title">Tafels</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the
+                                card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="card-img-top" src="img/cards/stoel.jpg" alt="Card image cap">
+                        <div class="card-body-wrapper">
+                            <h5 class="card-title">Stoelen</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the
+                                card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="card-img-top" src="img/cards/kast.jpg" alt="Card image cap">
+                        <div class="card-body-wrapper">
+                            <h5 class="card-title">Kasten</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the
+                                card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section id="contact">
         <h2 class="h1-responsive font-weight-bold text-center" style="padding-top: 24px;">Contacteer ons</h2>
@@ -219,17 +295,19 @@
 
         <div class="container">
             <div class="flex-container">
-                <div class="col-md-6" style="padding-bottom: 25px;">
+                <div class="col-md-6" style="padding-bottom: 25px; margin: 0 auto;">
                     <form id="contact-form" name="contact-form" action="mail.php" method="POST">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="md-form mb-0">
-                                    <input type="text" id="contact_name" name="name" class="form-control" placeholder="Naam">
+                                    <input type="text" id="contact_name" name="name" class="form-control"
+                                        placeholder="Naam">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="md-form mb-0">
-                                    <input type="text" id="contact_email" name="email" class="form-control" placeholder="E-mail">
+                                    <input type="text" id="contact_email" name="email" class="form-control"
+                                        placeholder="E-mail">
                                 </div>
                             </div>
                         </div>
@@ -244,121 +322,29 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="md-form">
-                                    <textarea type="text" id="contact_message" name="message" rows="2" class="form-control md-textarea"
-                                        placeholder="Uw bericht"></textarea>
+                                    <textarea type="text" id="contact_message" name="message" rows="2"
+                                        class="form-control md-textarea" placeholder="Uw bericht"></textarea>
                                 </div>
 
                             </div>
                         </div>
                     </form>
 
-                    <div class="text-center text-md-right">
-                        <a class="btn btn-danger" onclick="document.getElementById('contact-form').submit();">Verzenden</a>
+                    <div class="text-center">
+                        <a class="btn btn-danger"
+                            onclick="document.getElementById('contact-form').submit();">Verzenden</a>
                     </div>
                     <div class="status"></div>
                 </div>
 
-                <div class="col-md-6">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2501.1666461531645!2d4.459640816135477!3d51.179151379582535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3f9ffe5b73259%3A0x1e3a02ccc34d4aed!2sHeirbaan+49%2C+2640+Mortsel!5e0!3m2!1sen!2sbe!4v1549831663394"
+                <!-- <div class="col-md-6">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2501.1666461531645!2d4.459640816135477!3d51.179151379582535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3f9ffe5b73259%3A0x1e3a02ccc34d4aed!2sHeirbaan+49%2C+2640+Mortsel!5e0!3m2!1sen!2sbe!4v1549831663394"
                         width="100%" height="344px" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </div>
+                </div> -->
             </div>
         </div>
-
     </section>
-    <!-- Image Showcases -->
-    <!--<section class="showcase">
-        <div class="container-fluid p-0">
-            <div class="row no-gutters">
-
-                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div>
-                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                    <h2>Fully Responsive Design</h2>
-                    <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will
-                        look great on any device, whether it's a phone, tablet, or desktop the page will behave
-                        responsively!</p>
-                </div>
-            </div>
-            <div class="row no-gutters">
-                <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.jpg');"></div>
-                <div class="col-lg-6 my-auto showcase-text">
-                    <h2>Updated For Bootstrap 4</h2>
-                    <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the
-                        way in mobile responsive web development! All of the themes on Start Bootstrap are now using
-                        Bootstrap 4!</p>
-                </div>
-            </div>
-            <div class="row no-gutters">
-                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-3.jpg');"></div>
-                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                    <h2>Easy to Use &amp; Customize</h2>
-                    <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand
-                        some deeper customization options. Out of the box, just add your content and images, and your
-                        new landing page will be ready to go!</p>
-                </div>
-            </div>
-        </div>
-    </section>-->
-
-    <!-- Testimonials -->
-    <!--<section class="testimonials text-center bg-light">
-        <div class="container">
-            <h2 class="mb-5">What people are saying...</h2>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="img/testimonials-1.jpg" alt="">
-                        <h5>Margaret E.</h5>
-                        <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="img/testimonials-2.jpg" alt="">
-                        <h5>Fred S.</h5>
-                        <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of
-                            super nice landing pages."</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="img/testimonials-3.jpg" alt="">
-                        <h5>Sarah W.</h5>
-                        <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to
-                            us!"</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>-->
-
-    <!-- Call to Action -->
-    <!--<section class="call-to-action text-white text-center">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-9 mx-auto">
-                    <h2 class="mb-4">Ready to get started? Sign up now!</h2>
-                </div>
-                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-                    <form>
-                        <div class="form-row">
-                            <div class="col-12 col-md-9 mb-2 mb-md-0">
-                                <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
-                            </div>
-                            <div class="col-12 col-md-3">
-                                <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>-->
-    <!-- <section>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2501.1666461531654!2d4.459640815757932!3d51.179151379582514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3f9ffe5b73259%3A0x1e3a02ccc34d4aed!2sHeirbaan+49%2C+2640+Mortsel!5e0!3m2!1sen!2sbe!4v1549661825025"
-            width="100%" height="200px" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </section> -->
 
     <footer class="bgline">
         <div class="container flex-container text-center" style="margin-top: 100px; margin-bottom: 100px;">
